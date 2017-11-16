@@ -1,5 +1,5 @@
 // Variables for the products name and slogan coordinates
-var productName = "Coca Cola";
+var productName = 'Coca Cola';
 var sloganX = 10;
 var sloganY = 85;
 
@@ -7,7 +7,7 @@ var sloganY = 85;
 var cokeMove = -355;
 
 // function for the slogan text to be called for re-draw
-var sloganText = function(){
+var sloganText = function () {
 
     // Display the products name
     fill(255, 0, 0);
@@ -17,16 +17,16 @@ var sloganText = function(){
     // Draw the products slogan with "Coke" in big red letters
     fill(0, 0, 0);
     textSize(20);
-    text("Share a ", sloganX, sloganY);
+    text('Share a ', sloganX, sloganY);
     textSize(25);
     fill(255, 0, 0);
-    text("Coke", sloganX + 75, sloganY);
+    text('Coke', sloganX + 75, sloganY);
     fill(0, 0, 0);
     textSize(20);
-    text(" with a friend!", sloganX + 135, sloganY);
-};
+    text(' with a friend!', sloganX + 135, sloganY);
+  };
 
-var drawBottle = function(bottleX, bottleY, name){
+var drawBottle = function (bottleX, bottleY, name) {
     noStroke();
 
     // Create a red rectangle for the wide part of the bottle
@@ -42,7 +42,7 @@ var drawBottle = function(bottleX, bottleY, name){
     ellipse(bottleX + 175, bottleY + 100, 160, 150);
 
     // Add the "share with" name on the bottle
-    var cursive = createFont("Lucida calligraphy", 25);
+    var cursive = createFont('Lucida calligraphy', 25);
     textFont(cursive);
     text(name, bottleX + 10, bottleY + 50);
 
@@ -63,34 +63,34 @@ var drawBottle = function(bottleX, bottleY, name){
 
     // Add the angles to the bottle cap with white spaces
     fill(255, 255, 255);
-    triangle(bottleX + 22, bottleY - 80, bottleX + 10, bottleY - 50             , bottleX + 10, bottleY - 90);
+    triangle(bottleX + 22, bottleY - 80, bottleX + 10, bottleY - 50, bottleX + 10, bottleY - 90);
     triangle(bottleX + 76, bottleY - 80, bottleX + 100, bottleY -              35, bottleX + 100, bottleY - 90);
 
     // Add slogan beside the bottle
-    var normalFont = createFont("times");
-    textFont (normal);
+    var normalFont = createFont('times');
+    textFont(normal);
     textSize(30);
     fill(255, 0, 0);
-    text("open happiness", bottleX + 108, bottleY + 50);
+    text('open happiness', bottleX + 108, bottleY + 50);
     textSize(8);
-    text("TM", bottleX + 320, bottleY + 35);
+    text('TM', bottleX + 320, bottleY + 35);
 
-};
+  };
 
 // repeatedly draw the screen to animate the bottle into view
-draw = function() {
+draw = function () {
 
     // Redraw the background and slogan text
     background(255, 255, 255);
     sloganText();
 
     // draw the bottle with the draw x position from last loop
-    drawBottle(cokeMove, 200, "Mark");
+    drawBottle(cokeMove, 200, 'Mark');
 
     // if the bottle is not at the right position on screen
-    if (cokeMove < 40){
-        // increase the bottle x to move to further
-        cokeMove += 2;
+    if (cokeMove < 40) {
+      // increase the bottle x to move to further
+      cokeMove += 2;
     }
 
-};
+  };
